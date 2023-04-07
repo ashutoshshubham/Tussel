@@ -5,10 +5,10 @@ const {Schema, model} = require('../connection');     //import connection.js fil
 
 
 const mySchema = new Schema({
+    name : String,
     email : String,
-    username : String,
     password : String,
-    age : Number
+    role : String
 })
 
 

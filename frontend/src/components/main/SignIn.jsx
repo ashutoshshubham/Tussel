@@ -11,7 +11,7 @@ const SignIn = () => {
         resetForm()
         setSubmitting(true)
 
-        const res = await fetch('http://localhost:5000/user/auth', {
+        const res = await fetch('http://localhost:5000/user/authenticate', {
             method: 'POST',
             body: JSON.stringify(formdata),
             headers: {
