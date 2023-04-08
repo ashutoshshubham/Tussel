@@ -21,7 +21,8 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <Link class="nav-item">
-                                <Link class="nav-link active" aria-current="page" to="homepage">Home</Link>
+                                <Link class="nav-link active" aria-current="page" to="homepage">Home
+                                </Link>
                             </Link>
                             <li class="nav-item">
                                 <Link class="nav-link" to="signup">SignUp</Link>
@@ -30,9 +31,12 @@ const Navbar = () => {
                                 <Link class="nav-link" to="signin">SignIn</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled"
-                                >Disabled</a
-                                >
+                                <Link class="nav-link" to='organisationPro'
+                                >Organisation Profile</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link class="nav-link" to='Competition_det_entry'
+                                >Competition</Link>
                             </li>
                         </ul>
                     </div>

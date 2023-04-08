@@ -9,7 +9,39 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
+
+
+  const addOrg = async () => {
+    // console.log(formdata)
+    // resetForm()
+
+    const res = await fetch('http://localhost:5000/organisation/add', {
+      method: 'POST',
+      body: JSON.stringify({}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
+    console.log(res.status);
+
+    if (res.status === 200) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Signed Successfully'
+      })
+      const data = await res.json();
+      return data._id;
+      // navigate('/user');
+    }
+
+  }
   const userSubmit = async (formdata, {resetForm}) => {
+
+    let OrgId = await addOrg();
+    formdata.organisation = OrgId;
+
     console.log(formdata)
     resetForm()
 
@@ -51,7 +83,7 @@ const Signup = () => {
               <h1 className="card-title text-center">CREATE ACCOUNT</h1>
 
               <Formik
-                initialValues={{ name: "",  email: "", password: "",role: "" }}
+                initialValues={{ name: "",  email: "", password: "",organisation: "" }}
                 onSubmit={userSubmit}
               >
                 {
@@ -67,8 +99,8 @@ const Signup = () => {
                       <label>Password</label>
                       <input required type="password" className='form-control mb-3' name="password" onChange={handleChange} value={values.password} />
 
-                      <label>Role</label>
-                      <input required type="text" className='form-control mb-3' name="role" onChange={handleChange} value={values.role} />
+                      {/* <label>Organisation</label>
+                      <input required type="text" className='form-control mb-3' name="organisation" onChange={handleChange} value={values.organisation} /> */}
 
                       <button type="submit" className="btn btn-primary w-100 mb-3">Submit</button>
                     </form>

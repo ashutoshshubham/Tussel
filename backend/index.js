@@ -2,6 +2,7 @@ const express = require('express');          //method to import any package, her
 
 //import userRouter
 const userRouter = require('./routers/userRouter');
+const organisationRouter = require('./routers/organisationRouter');
 
 
 
@@ -33,6 +34,7 @@ app.use(cors({
 
 app.use(express.json());                 //convert data from json to js
 app.use('/user', userRouter);            //sending request to userRouter
+app.use('/organisation', organisationRouter)
 
 
 
