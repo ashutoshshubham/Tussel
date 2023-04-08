@@ -4,15 +4,15 @@ import { Formik } from 'formik'
 
 const Online_Comp = () => {
 
-  
-  const onlineData = async (formdata, {resetForm}) => {
-    
+
+  const onlineData = async (formdata, { resetForm }) => {
+
     console.log(formdata)
-    resetForm()
-    
+    // resetForm()
+
     const res = await fetch('http://localhost:5000/online/add', {
       method: 'POST',
-      body: JSON.stringify({formdata}),
+      body: JSON.stringify({ formdata }),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -27,7 +27,7 @@ const Online_Comp = () => {
         text: 'Signed Successfully'
       })
     }
-    
+
   }
 
 
@@ -39,10 +39,97 @@ const Online_Comp = () => {
         <div className="card-body">
           <h2 className="card-title text-center mb-5">ONLINE COMPETITION DESCRIPTION</h2>
 
+          <Formik
+            initialValues={{
+              date: "",
+              description: "",
+              rules: "",
+              rewards: "",
+              question: ""
+            }}
+            onSubmit={onlineData}
+          >
+            {({ values, handleChange, handleSubmit }) => (
+              <form onSubmit={handleSubmit}>
 
-          <button type="button" className="btn btn-primary">
-            Button
-          </button>
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="form12">
+                    <b>Date</b>
+                  </label>
+                  <input type="date" id="form12" className="form-control" name='date' onChange={handleChange} value={values.date} />
+                </div>
+
+
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="textAreaExample">
+                    <b>Description</b>
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="textAreaExample"
+                    rows={4}
+                    name='description'
+                    onChange={handleChange}
+                    value={values.description}
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="textAreaExample">
+                    <b>Rules</b>
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="textAreaExample"
+                    rows={4}
+                    name='rules'
+                    onChange={handleChange}
+                    value={values.rules}
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="textAreaExample">
+                    <b>Rewards</b>
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="textAreaExample"
+                    rows={4}
+                    name='rewards'
+                    onChange={handleChange}
+                    value={values.rewards}
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="textAreaExample">
+                    <b>Questions</b>
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="textAreaExample"
+                    rows={5}
+                    name='question'
+                    onChange={handleChange}
+                    value={values.question}
+                  />
+                </div>
+
+                <button type="submit" className="btn btn-primary w-100">
+                  Submit
+                </button>
+
+
+              </form>
+
+            )}
+
+
+          </Formik>
+
+
+
         </div>
       </div>
 
