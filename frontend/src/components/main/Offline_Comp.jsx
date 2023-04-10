@@ -11,7 +11,7 @@ const Offline_Comp = () => {
 
     const res = await fetch('http://localhost:5000/offline/add', {
       method: 'POST',
-      body: JSON.stringify({ formdata }),
+      body: JSON.stringify( formdata ),
       headers: {
         'Content-Type': 'application/json'
       }

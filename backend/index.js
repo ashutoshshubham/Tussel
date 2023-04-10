@@ -5,10 +5,12 @@ const userRouter = require('./routers/userRouter');
 const organisationRouter = require('./routers/organisationRouter');
 const onlineRouter = require('./routers/onlineRouter');
 const offlineRouter = require('./routers/offlineRouter');
+const feedbackRouter = require('./routers/feedbackRouter');
 
 
 
-const cors = require('cors')         //to allow request from frontend to backend
+const cors = require('cors');         //to allow request from frontend to backend
+const feedBackModel = require('./models/feedBackModel');
 
 
 
@@ -39,6 +41,7 @@ app.use('/user', userRouter);            //sending request to userRouter
 app.use('/organisation', organisationRouter)
 app.use('/online', onlineRouter)
 app.use('/offline', offlineRouter)
+app.use('/feedback', feedbackRouter)
 
 
 

@@ -26,7 +26,10 @@ const SignIn = () => {
                 title: 'Success',
                 text: 'Login Successful'
             })
-            // navigate('/user');
+            const data = (await res.json());
+            console.log(data);
+            sessionStorage.setItem('user', JSON.stringify(data));
+            // navigate('/organisationPro');
         }
         else if (res.status === 401) {
             Swal.fire({

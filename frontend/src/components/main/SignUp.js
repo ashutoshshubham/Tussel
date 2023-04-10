@@ -9,6 +9,8 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
+  
+
 
 
   const addOrg = async () => {
@@ -39,6 +41,7 @@ const Signup = () => {
   }
   const userSubmit = async (formdata, {resetForm}) => {
 
+    
     let OrgId = await addOrg();
     formdata.organisation = OrgId;
 
@@ -61,7 +64,7 @@ const Signup = () => {
         title: 'Success',
         text: 'Signed Successfully'
       })
-      // navigate('/user');
+      navigate('/organisationPro');
     }
 
   }
@@ -83,7 +86,7 @@ const Signup = () => {
               <h1 className="card-title text-center">CREATE ACCOUNT</h1>
 
               <Formik
-                initialValues={{ name: "",  email: "", password: "",organisation: "" }}
+                initialValues={{ name: "",  email: "", password: "",organisation: ""}}
                 onSubmit={userSubmit}
               >
                 {

@@ -12,7 +12,7 @@ const Online_Comp = () => {
 
     const res = await fetch('http://localhost:5000/online/add', {
       method: 'POST',
-      body: JSON.stringify({ formdata }),
+      body: JSON.stringify( formdata ),
       headers: {
         'Content-Type': 'application/json'
       }

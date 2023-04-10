@@ -20,10 +20,10 @@ const Navbar = () => {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <Link class="nav-item">
+                            <li class="nav-item">
                                 <Link class="nav-link active" aria-current="page" to="homepage">Home
                                 </Link>
-                            </Link>
+                            </li>
                             <li class="nav-item">
                                 <Link class="nav-link" to="signup">SignUp</Link>
                             </li>
@@ -37,6 +37,10 @@ const Navbar = () => {
                             <li class="nav-item">
                                 <Link class="nav-link" to='Competition_det_entry'
                                 >Competition</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link class="nav-link" to='feedback'
+                                >Feedback</Link>
                             </li>
                         </ul>
                     </div>

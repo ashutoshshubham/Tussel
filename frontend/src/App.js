@@ -9,6 +9,10 @@ import Organisation_Pro from './components/main/Organisation_Pro';
 import Competition_det_entry from './components/main/Competition_det_entry';
 import Online_Comp from './components/main/Online_Comp';
 import Offline_Comp from './components/main/Offline_Comp';
+import Feedback from './components/main/Feedback';
+import { UserAuthContextProvider } from './context/UserAuthContext'
+import PhoneSignUp from './components/main/PhoneSignUp'
+import ProtectedRoute from './components/main/ProtectedRoute'
 // import PhoneSignUp from './components/main/PhoneSignUp';
 // import ProtectedRoute from './components/main/ProtectedRoute';
 // import { UserAuthContextProvider } from './context/UserAuthContext';
@@ -19,8 +23,8 @@ import Offline_Comp from './components/main/Offline_Comp';
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      {/* <UserAuthContextProvider> */}
+      <UserAuthContextProvider>
+        <Navbar />
         <Routes>
           <Route element={<Navigate to='/homepage' />} path='/' />
           {/* <Route element={<ProtectedRoute><Home /></ProtectedRoute>} path='/homepage' /> */}
@@ -30,12 +34,16 @@ function App() {
           <Route element={<ForgetPswd />} path='forgetpswd' />
           <Route element={<Organisation_Pro />} path='organisationPro' />
           <Route element={<Competition_det_entry />} path='Competition_det_entry' />
-          <Route element={<Online_Comp/>} path='onlineComp' />
-          <Route element={<Offline_Comp/>} path='offlineComp' />
+          <Route element={<Online_Comp />} path='onlineComp' />
+          <Route element={<Offline_Comp />} path='offlineComp' />
+          <Route element={<Feedback />} path='feedback' />
+          {/* <Route element={<PhoneSignUp />} path='/phonesignup' /> */}
+
           {/* <Route element={<PhoneSignUp />} path='phonesignup' /> */}
         </Routes>
-      {/* </UserAuthContextProvider> */}
-    </BrowserRouter>
+      </UserAuthContextProvider>
+     
+    </BrowserRouter >
   );
 }
 
