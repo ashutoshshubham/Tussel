@@ -35,6 +35,7 @@ const Online_Comp = () => {
 
   return (
     <div>
+      
       <div className="card w-50 mx-auto mt-3">
         <div className="card-body">
           <h2 className="card-title text-center mb-5">ONLINE COMPETITION DESCRIPTION</h2>

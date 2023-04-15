@@ -34,7 +34,6 @@ function App() {
           <Route element={<Offline_Comp />} path='offlineComp' />
           <Route element={<Feedback />} path='feedback' />
         </Routes>
-  
      
     </BrowserRouter >
   );
