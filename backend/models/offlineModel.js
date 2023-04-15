@@ -7,7 +7,8 @@ const mySchema = new Schema({
     rewards : String,
     venue : String,
     requirement : String,
-    question : String
+    question : String,
+    user : {type : Types.ObjectId, ref: 'users'}
 })
 
 module.exports = model('offline', mySchema);

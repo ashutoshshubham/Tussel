@@ -17,7 +17,7 @@ const Offline_Comp = () => {
       }
     })
 
-    console.log(res.status)
+    console.log(res.status);
 
     if (res.status === 200) {
       Swal.fire({

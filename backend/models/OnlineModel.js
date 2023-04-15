@@ -5,7 +5,8 @@ const mySchema = new Schema({
     description : String,
     rules : String,
     rewards : String,
-    question : String
+    question : String,
+    user : {type : Types.ObjectId, ref: 'users'}
 })
 
 module.exports = model('online', mySchema);
