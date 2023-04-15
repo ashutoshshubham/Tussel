@@ -18,6 +18,7 @@ const SignIn = () => {
                 'Content-Type': 'application/json'
             }
         });
+
         console.log(res.status)
 
         if (res.status === 200) {
@@ -29,7 +30,7 @@ const SignIn = () => {
             const data = (await res.json());
             console.log(data);
             sessionStorage.setItem('user', JSON.stringify(data));
-            // navigate('/organisationPro');
+            navigate('/organisationPro');
         }
         else if (res.status === 401) {
             Swal.fire({
@@ -70,15 +71,16 @@ const SignIn = () => {
 
         <div className='container'>
 
-            <div className="row mt-5">
+            <div className="col-md-6 mx-auto mt-3 mb-5">
+                    
+                    <h1 className='text-center'>LOGIN FORM</h1>
 
-                <div className="col-md-6">
+                <div className="">
                     <img src="https://theuniqueacademy.co.in/assets/images/test.png" alt="" style={{ width: '100%' }} />
                 </div>
 
-                <div className="col-md-6 my-auto">
+                <div className="my-auto">
 
-                    <h1 className='text-center mb-3'>LOGIN FORM</h1>
 
                     <Formik
                         initialValues={{ email: "", password: "" }}

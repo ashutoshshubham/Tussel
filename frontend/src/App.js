@@ -10,6 +10,8 @@ import Competition_det_entry from './components/main/Competition_det_entry';
 import Online_Comp from './components/main/Online_Comp';
 import Offline_Comp from './components/main/Offline_Comp';
 import Feedback from './components/main/Feedback';
+import UserProvider from './context/UserProvider';
+import UserAuth from './auth/UserAuth'
 
 
 
@@ -20,7 +22,7 @@ import Feedback from './components/main/Feedback';
 function App() {
   return (
     <BrowserRouter>
-     
+      <UserProvider>
         <Navbar />
         <Routes>
           <Route element={<Navigate to='/homepage' />} path='/' />
@@ -28,13 +30,16 @@ function App() {
           <Route element={<Home />} path='homepage' />
           <Route element={<SignIn />} path='signin' />
           <Route element={<ForgetPswd />} path='forgetpswd' />
-          <Route element={<Organisation_Pro />} path='organisationPro' />
-          <Route element={<Competition_det_entry />} path='Competition_det_entry' />
-          <Route element={<Online_Comp />} path='onlineComp' />
-          <Route element={<Offline_Comp />} path='offlineComp' />
-          <Route element={<Feedback />} path='feedback' />
+
+          <Route element={<UserAuth><Organisation_Pro /></UserAuth>} path='organisationPro' />
+          <Route element={<UserAuth><Competition_det_entry /></UserAuth>} path='Competition_det_entry' />
+          <Route element={<UserAuth><Online_Comp /></UserAuth>} path='onlineComp' />
+          <Route element={<UserAuth><Offline_Comp /></UserAuth>} path='offlineComp' />
+          <Route element={<UserAuth><Feedback /></UserAuth>} path='feedback' />
+
         </Routes>
-     
+      </UserProvider>
+
     </BrowserRouter >
   );
 }

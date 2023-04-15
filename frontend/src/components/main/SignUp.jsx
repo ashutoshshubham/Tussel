@@ -73,17 +73,17 @@ const Signup = () => {
   return (
     <div className='container my-5'>
 
-      <div className="row">
+      <div className="col-md-6 mx-auto">
+              <h1 className="card-title text-center">CREATE ACCOUNT</h1>
 
-        <div className="col-md-6">
+        <div className="">
           <img src="https://img.freepik.com/premium-vector/isometric-style-illustration-about-registration-app-login-website-online-game_529804-422.jpg" alt="" style={{ width: '100%' }} />
         </div>
 
-        <div className="col-md-6">
+        <div className="">
 
           <div className="card">
             <div className="card-body">
-              <h1 className="card-title text-center">CREATE ACCOUNT</h1>
 
               <Formik
                 initialValues={{ name: "",  email: "", password: "",organisation: ""}}

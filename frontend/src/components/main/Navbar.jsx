@@ -24,12 +24,7 @@ const Navbar = () => {
                                 <Link class="nav-link active" aria-current="page" to="homepage">Home
                                 </Link>
                             </li>
-                            <li class="nav-item">
-                                <Link class="nav-link" to="signup">SignUp</Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link class="nav-link" to="signin">SignIn</Link>
-                            </li>
+
                             <li class="nav-item">
                                 <Link class="nav-link" to='organisationPro'
                                 >Organisation Profile</Link>
@@ -43,6 +38,17 @@ const Navbar = () => {
                                 >Feedback</Link>
                             </li>
                         </ul>
+
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item">
+                                <Link class="nav-link" to="signin">Login</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link class="nav-link" to="signup">SignUp</Link>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </nav>
