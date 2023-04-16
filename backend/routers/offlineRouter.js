@@ -28,7 +28,7 @@ router.get('/getall', (req,res) => {
     });
 })
 
-router.get('/getbyid/:Online_id', (req, res) => {
+router.get('/getbyid/:Offline_id', (req, res) => {
     Model.findById(req.params.userid)
     .then((result) => {
         res.json(result);

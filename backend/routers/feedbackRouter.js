@@ -19,7 +19,7 @@ router.post('/add', (req, res) => {
 });
 
 router.get('/getall', (req,res) => {
-    Model.find({}).populate('user')
+    Model.find({}).populate('users')
     .then((result) => {
         res.json(result);
     }).catch((err) => {

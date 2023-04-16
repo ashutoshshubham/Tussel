@@ -27,7 +27,7 @@ const Feedback = () => {
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: 'Signed Successfully'
+                text: 'FeedBack Submited'
             })
         }
 

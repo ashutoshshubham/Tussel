@@ -1,7 +1,9 @@
+const { Types } = require('mongoose');
 const {Schema, model} = require('../connection')
 
 const mySchema = new Schema({
     date : Date,
+    // time : Time,
     description : String,
     rules : String,
     rewards : String,

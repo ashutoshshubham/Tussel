@@ -24,7 +24,7 @@ const Online_Comp = () => {
       Swal.fire({
         icon: 'success',
         title: 'Success',
-        text: 'Signed Successfully'
+        text: 'Data Added Successfully'
       })
     }
 
@@ -43,6 +43,7 @@ const Online_Comp = () => {
           <Formik
             initialValues={{
               date: "",
+              time: "",
               description: "",
               rules: "",
               rewards: "",
@@ -58,6 +59,13 @@ const Online_Comp = () => {
                     <b>Date</b>
                   </label>
                   <input type="date" id="form12" className="form-control" name='date' onChange={handleChange} value={values.date} />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="form12">
+                    <b>Time</b>
+                  </label>
+                  <input type="time" id="form12" className="form-control" name='time' onChange={handleChange} value={values.time} />
                 </div>
 
 
