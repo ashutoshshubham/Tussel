@@ -15,7 +15,7 @@ const Feedback = () => {
 
         const res = await fetch('http://localhost:5000/feedback/add', {
             method: 'POST',
-            body: JSON.stringify( formdata ),
+            body: JSON.stringify(formdata),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -29,6 +29,7 @@ const Feedback = () => {
                 title: 'Success',
                 text: 'FeedBack Submited'
             })
+            resetForm()
         }
 
     }
@@ -81,7 +82,7 @@ const Feedback = () => {
                                     }
                                 </Formik>
 
-                                
+
 
 
                             </div>

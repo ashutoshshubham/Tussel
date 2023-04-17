@@ -13,6 +13,7 @@ import Feedback from './components/main/Feedback';
 import UserProvider from './context/UserProvider';
 import UserAuth from './auth/UserAuth'
 import All_Details from './components/main/All_Details';
+import { useState } from 'react';
 
 
 
@@ -21,9 +22,12 @@ import All_Details from './components/main/All_Details';
 
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
   return (
     <BrowserRouter>
-      <UserProvider>
+      <UserProvider currentUser={currentUser}>
         <Navbar />
         <Routes>
           <Route element={<Navigate to='/homepage' />} path='/' />

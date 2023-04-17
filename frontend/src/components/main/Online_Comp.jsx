@@ -43,7 +43,7 @@ const Online_Comp = () => {
           <Formik
             initialValues={{
               date: "",
-              time: "",
+              // time: "",
               description: "",
               rules: "",
               rewards: "",
@@ -58,15 +58,15 @@ const Online_Comp = () => {
                   <label className="form-label" htmlFor="form12">
                     <b>Date</b>
                   </label>
-                  <input type="date" id="form12" className="form-control" name='date' onChange={handleChange} value={values.date} />
+                  <input type="datetime-local" id="form12" className="form-control" name='date' onChange={handleChange} value={values.date} />
                 </div>
 
-                <div className="mb-3">
+                {/* <div className="mb-3">
                   <label className="form-label" htmlFor="form12">
                     <b>Time</b>
                   </label>
                   <input type="time" id="form12" className="form-control" name='time' onChange={handleChange} value={values.time} />
-                </div>
+                </div> */}
 
 
                 <div className="mb-3">
@@ -111,7 +111,7 @@ const Online_Comp = () => {
                   />
                 </div>
 
-                <div className="mb-3">
+                {/* <div className="mb-3">
                   <label className="form-label" htmlFor="textAreaExample">
                     <b>Questions</b>
                   </label>
@@ -123,7 +123,7 @@ const Online_Comp = () => {
                     onChange={handleChange}
                     value={values.question}
                   />
-                </div>
+                </div> */}
 
                 <button type="submit" className="btn btn-primary w-100">
                   Submit

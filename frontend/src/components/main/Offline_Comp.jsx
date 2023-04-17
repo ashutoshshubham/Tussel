@@ -42,7 +42,7 @@ const Offline_Comp = () => {
           <Formik
             initialValues={{
               date: "",
-              time: "",
+              // time: "",
               description: "",
               rules: "",
               rewards: "",
@@ -57,17 +57,17 @@ const Offline_Comp = () => {
 
                 <div className="mb-3">
                   <label className="form-label" htmlFor="form12">
-                    <b>Date</b>
+                    <b>Date and Time</b>
                   </label>
-                  <input type="date" id="form12" className="form-control" name='date' onChange={handleChange} value={values.date} />
+                  <input type="datetime-local" id="form12" className="form-control" name='date' onChange={handleChange} value={values.date} />
                 </div>
 
-                <div className="mb-3">
+                {/* <div className="mb-3">
                   <label className="form-label" htmlFor="form12">
                     <b>Time</b>
                   </label>
-                  <input type="time" id="form12" className="form-control" name='time' onChange={handleChange} value={values.time} />
-                </div>
+                  <input type="datetime-local" id="form12" className="form-control" name='time' onChange={handleChange} value={values.time} />
+                </div> */}
 
 
                 <div className="mb-3">
@@ -140,7 +140,7 @@ const Offline_Comp = () => {
                   />
                 </div>
 
-                <div className="mb-3">
+                {/* <div className="mb-3">
                   <label className="form-label" htmlFor="textAreaExample">
                     <b>Questions</b>
                   </label>
@@ -152,7 +152,7 @@ const Offline_Comp = () => {
                     onChange={handleChange}
                     value={values.question}
                   />
-                </div>
+                </div> */}
 
                 <button type="submit" className="btn btn-primary w-100">
                   Submit

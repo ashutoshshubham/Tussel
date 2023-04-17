@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Formik } from 'formik'
+import Swal from 'sweetalert2'
 
 const Organisation_Pro = () => {
 
@@ -33,6 +34,14 @@ const Organisation_Pro = () => {
             }
         })
         console.log(res.status)
+
+        if (res.status === 200){
+            Swal.fire({
+                icon : 'success',
+                title : "Success",
+                text : "Data Added"
+            })
+        }
     }
 
 
@@ -44,43 +53,24 @@ const Organisation_Pro = () => {
             <div className="card w-50 mx-auto mt-2">
                 <div className="card-body">
                     <h2 className="card-title text-center mb-5">ORGANISATION DETAIL</h2>
-                    <div className="mb-2">
-                        <label className="form-label" htmlFor="formControlDisabled">
-                            Name
-                        </label>
-                        <input
-                            className="form-control"
-                            id="formControlDisabled"
-                            type="text"
-                            aria-label="disabled input example"
-                            disabled
-
-                        />
-                    </div>
-                    <div className="mb-2">
-                        <label className="form-label" htmlFor="formControlDisabled">
-                            Email
-                        </label>
-                        <input
-                            className="form-control"
-                            id="formControlDisabled"
-                            type="text"
-                            aria-label="disabled input example"
-                            disabled
-                        />
-                    </div>
-
                     <Formik
-                        initialValues={{ org_name: '', org_details: '' }}
+                        initialValues={{ name: "", email: "", org_name: '', org_details: '' }}
                         onSubmit={orgSubmit}>
                         {({ values, handleChange, handleSubmit }) => (
                             <form onSubmit={handleSubmit}>
+                                <label>Name</label>
+                                <input required type="text" className='form-control mb-3' name="name" onChange={handleChange} value={values.name} />
+
+                                <label>Email</label>
+                                <input required type="email" className='form-control mb-3' name="email" onChange={handleChange} value={values.email} />
+
+
 
                                 <div className="mb-2">
                                     <label className="form-label" htmlFor="form12">
                                         Organisation Name
                                     </label>
-                                    <input type="text" id="form12" className="form-control" name='org_name' onChange={handleChange} value={values.org_name}/>
+                                    <input type="text" id="form12" className="form-control" name='org_name' onChange={handleChange} value={values.org_name} />
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label" htmlFor="textAreaExample">
