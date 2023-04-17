@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik } from "formik"
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from "sweetalert2"
+import './SignUp.css'
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -69,41 +70,45 @@ const SignIn = () => {
 
         // </div>
 
-        <div className='container'>
+        <div className='login-bg-image vh-100'>
 
-            <div className="col-md-6 mx-auto mt-3 mb-5">
-                    
-                    <h1 className='text-center'>LOGIN FORM</h1>
+            <div className="col-md-6 mx-auto mt-1 mb-5">
 
-                <div className="">
+                {/* <h1 className='text-center'>LOGIN FORM</h1> */}
+
+                {/* <div className="">
                     <img src="https://theuniqueacademy.co.in/assets/images/test.png" alt="" style={{ width: '100%' }} />
-                </div>
+                </div> */}
 
-                <div className="my-auto">
+                <div className="login-card-position">
+                    <div className="card">
+                        <div className="card-body">
+                            <h1 className="card-title text-center">LOGIN HERE</h1>
 
 
-                    <Formik
-                        initialValues={{ email: "", password: "" }}
-                        onSubmit={loginSubmit}>
-                        {({ values, handleSubmit, handleChange, isSubmitting }) => (
-                            <form onSubmit={handleSubmit}>
-                                <label>Email Address</label>
-                                <input required type="email" className="form-control mb-3" value={values.email} name="email" onChange={handleChange} />
+                            <Formik
+                                initialValues={{ email: "", password: "" }}
+                                onSubmit={loginSubmit}>
+                                {({ values, handleSubmit, handleChange, isSubmitting }) => (
+                                    <form onSubmit={handleSubmit}>
+                                        <label>Email Address</label>
+                                        <input required type="email" className="form-control mb-3" value={values.email} name="email" onChange={handleChange} />
 
-                                <label>Password</label>
-                                <input required type="password" className="form-control mb-3" value={values.password} name="password" onChange={handleChange} />
+                                        <label>Password</label>
+                                        <input required type="password" className="form-control mb-3" value={values.password} name="password" onChange={handleChange} />
 
-                                <Link to="/forgetpswd" className="">
-                                    Forgot Password
-                                </Link>
+                                        <Link to="/forgetpswd" className="">
+                                            Forgot Password
+                                        </Link>
 
-                                <button type="submit" className="btn btn-success w-100 my-2">
-                                    {isSubmitting ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : "Submit"}
-                                </button>
-                            </form>
-                        )}
-                    </Formik>
-
+                                        <button type="submit" className="btn btn-success w-100 my-2">
+                                            {isSubmitting ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : "Submit"}
+                                        </button>
+                                    </form>
+                                )}
+                            </Formik>
+                        </div>
+                    </div>
                 </div>
 
             </div>

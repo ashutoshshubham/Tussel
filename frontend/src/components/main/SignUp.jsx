@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik } from 'formik'
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import './SignUp.css'
 
 
 
@@ -9,7 +10,7 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  
+
 
 
 
@@ -39,9 +40,9 @@ const Signup = () => {
     }
 
   }
-  const userSubmit = async (formdata, {resetForm}) => {
+  const userSubmit = async (formdata, { resetForm }) => {
 
-    
+
     let OrgId = await addOrg();
     formdata.organisation = OrgId;
 
@@ -71,22 +72,23 @@ const Signup = () => {
 
 
   return (
-    <div className='container my-5'>
+    <div className='signup-bg-image vh-100'>
 
       <div className="col-md-6 mx-auto">
-              <h1 className="card-title text-center">CREATE ACCOUNT</h1>
 
-        <div className="">
-          <img src="https://img.freepik.com/premium-vector/isometric-style-illustration-about-registration-app-login-website-online-game_529804-422.jpg" alt="" style={{ width: '100%' }} />
-        </div>
 
-        <div className="">
+        {/* <div className="">
+          <img src="https://img.freepik.com/premium-vector/isometric-style-illustration-about-registration-app-login-website-online-game_529804-422.jpg" alt="" style={{ width: '80%' }} />
+        </div> */}
+
+        <div className='signup-card-position'>
 
           <div className="card">
             <div className="card-body">
+              <h1 className="card-title text-center">CREATE ACCOUNT</h1>
 
               <Formik
-                initialValues={{ name: "",  email: "", password: "",organisation: ""}}
+                initialValues={{ name: "", email: "", password: "", organisation: "" }}
                 onSubmit={userSubmit}
               >
                 {

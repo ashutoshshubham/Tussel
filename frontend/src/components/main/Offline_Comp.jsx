@@ -15,7 +15,7 @@ const Offline_Comp = () => {
 
     const res = await fetch('http://localhost:5000/offline/add', {
       method: 'POST',
-      body: JSON.stringify( formdata ),
+      body: JSON.stringify(formdata),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -29,6 +29,7 @@ const Offline_Comp = () => {
         title: 'Success',
         text: 'Data Added Successfully'
       })
+      resetForm()
     }
 
   }
@@ -50,8 +51,8 @@ const Offline_Comp = () => {
               description: "",
               rules: "",
               rewards: "",
-              venue:"",
-              requirement:"",
+              venue: "",
+              requirement: "",
               // question: ""
               user: currentUser._id
             }}

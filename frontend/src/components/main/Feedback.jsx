@@ -47,7 +47,7 @@ const Feedback = () => {
                         <img src="https://img.freepik.com/premium-vector/isometric-style-illustration-about-registration-app-login-website-online-game_529804-422.jpg" alt="" style={{ width: '100%' }} />
                     </div>
 
-                    <div className="col-md-6">
+                    <div className="col-md-6 my-auto">
 
                         <div className="card">
                             <div className="card-body">

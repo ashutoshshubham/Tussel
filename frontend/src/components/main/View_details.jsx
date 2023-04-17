@@ -9,9 +9,10 @@ const View_details = () => {
     // const { id } = useParams();
     const [orgData, setOrgData] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [competition, setCompetition] = useState([])
 
 
-    const fetchAllData = async () => {
+    const fetchOrgData = async () => {
         setLoading(true);
         const res = await fetch('http://localhost:5000/organisation/getbyuser/' + currentUser._id)
         
@@ -26,13 +27,43 @@ const View_details = () => {
 
     }
 
+    const fetchOffline = async () => {
+        setLoading(true);
+        const res = await fetch('http://localhost:5000/offline/getbyuser/' + currentUser._id)
+
+        setLoading(false);
+        console.log(res.status)
+
+        if (res.status === 200) {
+            const data = await res.json();
+            console.log(data)
+            setCompetition(data)
+        }
+    }
+
+    const fetchOnline = async () => {
+        setLoading(true);
+        const res = await fetch('http://localhost:5000/online/getbyuser/' + currentUser._id)
+
+        setLoading(false);
+        console.log(res.status)
+
+        if (res.status === 200) {
+            const data = await res.json();
+            console.log(data)
+            setCompetition(data)
+        }
+    }
+
     useEffect(() => {
-        fetchAllData();
+        fetchOrgData();
+        fetchOffline();
+        fetchOnline();
     }, [])
 
 
     const displayDetails = () => {
-        if (!loading && orgData) {
+        if (!loading && orgData && competition) {
             return <div className="card mt-3">
                 <div className="card-body">
                     <h1 className="card-title">Organisation Name : {orgData.org_name}</h1>
@@ -42,6 +73,13 @@ const View_details = () => {
                     <p>
                         <b>Email : </b> {orgData.email}
                     </p>
+                    <h4>About Competition - </h4>
+                    <p><b>Date and Time : </b>{competition.date}</p>
+                    <p><b>Description : </b>{competition.description}</p>
+                    <p><b>Rules : </b>{competition.rules}</p>
+                    <p><b>Rewards : </b>{competition.rewards}</p>
+                    <p><b>Venue : </b>{competition.venue}</p>
+
                     <button type="button" className="btn btn-primary">
                         Button
                     </button>

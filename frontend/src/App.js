@@ -42,7 +42,7 @@ function App() {
           <Route element={<UserAuth><Offline_Comp /></UserAuth>} path='offlineComp' />
           <Route element={<UserAuth><Feedback /></UserAuth>} path='feedback' />
     
-          <Route element={<View_details />} path='view_details' />
+          <Route element={<UserAuth><View_details /></UserAuth>} path='view_details' />
 
         </Routes>
       </UserProvider>
