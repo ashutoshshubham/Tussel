@@ -6,6 +6,9 @@ const Organisation_Pro = () => {
 
     const [org, setOrg] = useState([])
 
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')))
+    console.log(currentUser)
+
     const orgSubmit = async (formdata, { resetForm }) => {
 
 
@@ -27,7 +30,7 @@ const Organisation_Pro = () => {
                 title: "Success",
                 text: "Data Added"
             })
-            resetForm()
+            // resetForm()
         }
     }
 
@@ -59,15 +62,39 @@ const Organisation_Pro = () => {
                 <div className="card-body">
                     <h2 className="card-title text-center mb-5">ORGANISATION DETAIL</h2>
                     <Formik
-                        initialValues={{ name: "", email: "", org_name: '', org_details: '', user: '' }}
+                        initialValues={{ name: currentUser.name, email: currentUser.email, org_name: '', org_details: '', user: currentUser._id }}
                         onSubmit={orgSubmit}>
                         {({ values, handleChange, handleSubmit }) => (
                             <form onSubmit={handleSubmit}>
-                                <label>Name</label>
-                                <input required type="text" className='form-control mb-3' name="name" onChange={handleChange} value={values.name} />
+                                {/* <label>Name</label>
+                                <input required type="text" className='form-control mb-3' name="name" onChange={handleChange} value={values.name} /> */}
 
-                                <label>Email</label>
-                                <input required type="email" className='form-control mb-3' name="email" onChange={handleChange} value={values.email} />
+                                <div class="mb-3">
+                                    <label class="form-label" for="formControlDisabled">Name</label>
+                                    <input
+                                        class="form-control"
+                                        id="formControlDisabled"
+                                        type="text"
+                                        value={values.name}
+                                        aria-label="disabled input example"
+                                        disabled
+                                    />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="formControlDisabled">Email</label>
+                                    <input
+                                        class="form-control"
+                                        id="formControlDisabled"
+                                        type="text"
+                                        value={values.email}
+                                        aria-label="disabled input example"
+                                        disabled
+                                    />
+                                </div>
+
+                                {/* <label>Email</label>
+                                <input required type="email" className='form-control mb-3' name="email" onChange={handleChange} value={values.email} /> */}
 
 
 

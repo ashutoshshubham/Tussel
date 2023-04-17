@@ -1,8 +1,12 @@
 import React from 'react'
 import Swal from 'sweetalert2'
 import { Formik } from 'formik'
+import { useState } from 'react'
 
 const Online_Comp = () => {
+
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')))
+  console.log(currentUser)
 
 
   const onlineData = async (formdata, { resetForm }) => {
@@ -12,7 +16,7 @@ const Online_Comp = () => {
 
     const res = await fetch('http://localhost:5000/online/add', {
       method: 'POST',
-      body: JSON.stringify( formdata ),
+      body: JSON.stringify(formdata),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -26,6 +30,7 @@ const Online_Comp = () => {
         title: 'Success',
         text: 'Data Added Successfully'
       })
+      resetForm()
     }
 
   }
@@ -35,7 +40,7 @@ const Online_Comp = () => {
 
   return (
     <div>
-      
+
       <div className="card w-50 mx-auto mt-3">
         <div className="card-body">
           <h2 className="card-title text-center mb-5">ONLINE COMPETITION DESCRIPTION</h2>
@@ -47,7 +52,8 @@ const Online_Comp = () => {
               description: "",
               rules: "",
               rewards: "",
-              question: ""
+              // question: ""
+              user: currentUser._id
             }}
             onSubmit={onlineData}
           >

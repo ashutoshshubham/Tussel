@@ -1,8 +1,12 @@
 import React from 'react'
 import Swal from 'sweetalert2'
 import { Formik } from 'formik'
+import { useState } from 'react'
 
 const Offline_Comp = () => {
+
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')))
+  console.log(currentUser)
 
   const offlineData = async (formdata, { resetForm }) => {
 
@@ -48,7 +52,8 @@ const Offline_Comp = () => {
               rewards: "",
               venue:"",
               requirement:"",
-              question: ""
+              // question: ""
+              user: currentUser._id
             }}
             onSubmit={offlineData}
           >
