@@ -41,7 +41,8 @@ function App() {
           <Route element={<UserAuth><Online_Comp /></UserAuth>} path='onlineComp' />
           <Route element={<UserAuth><Offline_Comp /></UserAuth>} path='offlineComp' />
           <Route element={<UserAuth><Feedback /></UserAuth>} path='feedback' />
-          <Route element={<UserAuth><All_Details /></UserAuth>} path='all_details' />
+          {/* <Route element={<UserAuth><All_Details /></UserAuth>} path='all_details' /> */}
+          <Route element={<All_Details />} path='all_details' />
 
         </Routes>
       </UserProvider>

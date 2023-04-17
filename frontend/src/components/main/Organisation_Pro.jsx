@@ -6,6 +6,32 @@ const Organisation_Pro = () => {
 
     const [org, setOrg] = useState([])
 
+    const orgSubmit = async (formdata, { resetForm }) => {
+
+
+        console.log(formdata)
+
+
+        const res = await fetch('http://localhost:5000/organisation/add', {
+            method: 'POST',
+            body: JSON.stringify(formdata),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        console.log(res.status)
+
+        if (res.status === 200) {
+            Swal.fire({
+                icon: 'success',
+                title: "Success",
+                text: "Data Added"
+            })
+            resetForm()
+        }
+    }
+
+
     const fetchOrgData = async (id) => {
         const res = await fetch('http://localhost:5000/organisation/getbyid/' + id)
 
@@ -17,32 +43,11 @@ const Organisation_Pro = () => {
     // console.log(res.status)
 
     useEffect(() => {
+        orgSubmit();
         fetchOrgData();
     }, [])
 
-    const orgSubmit = async (formdata, { resetForm }) => {
 
-
-        console.log(formdata)
-        resetForm()
-
-        const res = await fetch('http://localhost:5000/organisation/add', {
-            method: 'POST',
-            body: JSON.stringify(formdata),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        console.log(res.status)
-
-        if (res.status === 200){
-            Swal.fire({
-                icon : 'success',
-                title : "Success",
-                text : "Data Added"
-            })
-        }
-    }
 
 
 
@@ -54,7 +59,7 @@ const Organisation_Pro = () => {
                 <div className="card-body">
                     <h2 className="card-title text-center mb-5">ORGANISATION DETAIL</h2>
                     <Formik
-                        initialValues={{ name: "", email: "", org_name: '', org_details: '' }}
+                        initialValues={{ name: "", email: "", org_name: '', org_details: '', user: '' }}
                         onSubmit={orgSubmit}>
                         {({ values, handleChange, handleSubmit }) => (
                             <form onSubmit={handleSubmit}>

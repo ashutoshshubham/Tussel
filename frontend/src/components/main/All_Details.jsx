@@ -20,10 +20,27 @@ const All_Details = () => {
     }, [])
 
 
-
-
   return (
+
     <div className='container'>
+      <h2 className='text-center mx-3'>
+        ORGANISATION DETAILS
+      </h2>
+
+      {profile.map((profiles) => (
+        <div className="card mt-3">
+        <div className="card-body">
+          <h2 className="card-title">{profiles.org_name}</h2>
+          <p className="card-text">
+            {profiles.org_details}
+          </p>
+          <button type="button" className="btn btn-primary">
+            Button
+          </button>
+        </div>
+      </div>
+      
+      ))}
 
 
 
