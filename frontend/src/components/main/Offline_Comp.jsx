@@ -47,13 +47,11 @@ const Offline_Comp = () => {
           <Formik
             initialValues={{
               date: "",
-              // time: "",
               description: "",
               rules: "",
               rewards: "",
               venue: "",
               requirement: "",
-              // question: ""
               user: currentUser._id
             }}
             onSubmit={offlineData}

@@ -14,6 +14,7 @@ import UserProvider from './context/UserProvider';
 import UserAuth from './auth/UserAuth'
 import { useState } from 'react';
 import View_details from './components/main/View_details';
+import CompetitionEntry from './components/main/CompetitionEntry';
 
 
 
@@ -37,12 +38,13 @@ function App() {
           <Route element={<ForgetPswd />} path='forgetpswd' />
 
           <Route element={<UserAuth><Organisation_Pro /></UserAuth>} path='organisationPro' />
-          <Route element={<UserAuth><Competition_det_entry /></UserAuth>} path='Competition_det_entry' />
-          <Route element={<UserAuth><Online_Comp /></UserAuth>} path='onlineComp' />
-          <Route element={<UserAuth><Offline_Comp /></UserAuth>} path='offlineComp' />
+          {/* <Route element={<UserAuth><Competition_det_entry /></UserAuth>} path='Competition_det_entry' /> */}
+          {/* <Route element={<UserAuth><Online_Comp /></UserAuth>} path='onlineComp' />
+          <Route element={<UserAuth><Offline_Comp /></UserAuth>} path='offlineComp' /> */}
           <Route element={<UserAuth><Feedback /></UserAuth>} path='feedback' />
     
           <Route element={<UserAuth><View_details /></UserAuth>} path='view_details' />
+          <Route element={<CompetitionEntry />} path='competitionEntry' />
 
         </Routes>
       </UserProvider>

@@ -3,14 +3,15 @@ const express = require('express');          //method to import any package, her
 //import userRouter
 const userRouter = require('./routers/userRouter');
 const organisationRouter = require('./routers/organisationRouter');
-const onlineRouter = require('./routers/onlineRouter');
-const offlineRouter = require('./routers/offlineRouter');
+// const onlineRouter = require('./routers/onlineRouter');
+// const offlineRouter = require('./routers/offlineRouter');
 const feedbackRouter = require('./routers/feedbackRouter');
+const competitionRouter = require('./routers/competitionRouter');
 
 
 
 const cors = require('cors');         //to allow request from frontend to backend
-const feedBackModel = require('./models/feedBackModel');
+// const feedBackModel = require('./models/feedBackModel');
 
 
 
@@ -39,9 +40,10 @@ app.use(cors({
 app.use(express.json());                 //convert data from json to js
 app.use('/user', userRouter);            //sending request to userRouter
 app.use('/organisation', organisationRouter)
-app.use('/online', onlineRouter)
-app.use('/offline', offlineRouter)
+// app.use('/online', onlineRouter)
+// app.use('/offline', offlineRouter)
 app.use('/feedback', feedbackRouter)
+app.use('/competition', competitionRouter)
 
 
 

@@ -96,6 +96,10 @@ const Navbar = () => {
                                     <Link class="nav-link" to={'/view_details'}
                                     >View Details</Link>
                                 </li>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to={'/competitionEntry'}
+                                    >Competition</Link>
+                                </li>
                             </ul>
 
 
