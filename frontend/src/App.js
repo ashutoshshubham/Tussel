@@ -12,8 +12,8 @@ import Offline_Comp from './components/main/Offline_Comp';
 import Feedback from './components/main/Feedback';
 import UserProvider from './context/UserProvider';
 import UserAuth from './auth/UserAuth'
-import All_Details from './components/main/All_Details';
 import { useState } from 'react';
+import View_details from './components/main/View_details';
 
 
 
@@ -41,8 +41,8 @@ function App() {
           <Route element={<UserAuth><Online_Comp /></UserAuth>} path='onlineComp' />
           <Route element={<UserAuth><Offline_Comp /></UserAuth>} path='offlineComp' />
           <Route element={<UserAuth><Feedback /></UserAuth>} path='feedback' />
-          {/* <Route element={<UserAuth><All_Details /></UserAuth>} path='all_details/:userId' /> */}
-          <Route element={<All_Details />} path='all_details/:userId' />
+    
+          <Route element={<View_details />} path='view_details' />
 
         </Routes>
       </UserProvider>

@@ -96,7 +96,7 @@ router.get('/getbyid/:userid', (req, res) => {
 })
 
 router.get('/getbyuser/:userid', (req, res) => {
-    Model.find({user : req.params.userid})
+    Model.findOne({user : req.params.userid})
     .then((result) => {
         res.json(result);
     }).catch((err) => {

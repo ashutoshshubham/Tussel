@@ -2,10 +2,12 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 // import '../../App.css'
 import { useUserContext } from '../../context/UserProvider';
+import { useState } from 'react';
 
 const Navbar = () => {
 
     const { loggedIn, setLoggedIn, logout } = useUserContext();
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
     const showLoggedIn = () => {
         if (!loggedIn) {
@@ -91,8 +93,8 @@ const Navbar = () => {
                                     >Feedback</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to='all_details'
-                                    >All Details</Link>
+                                    <Link class="nav-link" to={'/view_details'}
+                                    >View Details</Link>
                                 </li>
                             </ul>
 
