@@ -59,7 +59,7 @@ const CompetitionEntry = () => {
                                 rewards: "",
                                 venue: "",
                                 requirement: "",
-                                user: currentUser._id
+                                // user: currentUser._id
                             }}
                             onSubmit={competitionData}
                         >

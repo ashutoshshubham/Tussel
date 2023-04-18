@@ -44,7 +44,7 @@ const Navbar = () => {
                     {/* <button className="btn btn-danger ms-3" aria-current="page" onClick={logout}>
                         Logout
                     </button> */}
-                    <button type="button" className="btn btn-primary me-3 mb-2" onClick={logout}>
+                    <button type="button" className="btn btn-danger me-3 mb-2" onClick={logout}>
                         LogOut
                     </button>
                     {/* // </li> */}

@@ -3,13 +3,16 @@ import { Formik } from "formik"
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from "sweetalert2"
 import './SignUp.css'
+import { useUserContext } from '../../context/UserProvider'
 
 const SignIn = () => {
     const navigate = useNavigate();
 
+    const {setLoggedIn} = useUserContext();
+
     const loginSubmit = async (formdata, { resetForm, setSubmitting }) => {
         console.log(formdata)
-        resetForm()
+   
         setSubmitting(true)
 
         const res = await fetch('http://localhost:5000/user/authenticate', {
@@ -28,9 +31,12 @@ const SignIn = () => {
                 title: 'Success',
                 text: 'Login Successful'
             })
-            const data = (await res.json());
+            setLoggedIn(true)
+            const data = await res.json();
             console.log(data);
             sessionStorage.setItem('user', JSON.stringify(data));
+
+            // check id there is a previous url , if not redirect to profile page
             navigate('/organisationPro');
         }
         else if (res.status === 401) {
