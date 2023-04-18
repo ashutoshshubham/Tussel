@@ -47,9 +47,9 @@ const DisplayDetails = () => {
                         <p><b>Rewards : </b>{competition.rewards}</p>
                         <p><b>Venue : </b>{competition.venue}</p> */}
 
-                        <button type="button" className="btn btn-primary">
+                        {/* <button type="button" className="btn btn-primary">
                             Button
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             )
