@@ -36,7 +36,20 @@ const SignIn = () => {
             console.log(data);
             sessionStorage.setItem('user', JSON.stringify(data));
 
-            // check id there is a previous url , if not redirect to profile page
+            // check if there is a previous url , if not redirect to profile page
+
+            console.log(document.location)
+            console.log(document.location.href)
+
+            const currentUrl = document.location.href;
+            if (currentUrl !== null){
+                navigate('/display')
+            }
+
+            
+
+            
+
             navigate('/organisationPro');
         }
         else if (res.status === 401) {
