@@ -35,7 +35,7 @@ const Home = () => {
               <p className="card-text">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio exercitationem, inventore necessitatibus accusamus cupiditate doloribus minus eius recusandae! Dignissimos explicabo fuga impedit facilis. Modi provident cum eius. Aut quibusdam, facilis minus nostrum odit ducimus? Suscipit ipsum id explicabo quam soluta? Quia nulla, eaque tenetur sapiente iusto quibusdam laboriosam minima rem.
               </p>
-              <Link to='/onlineComp'>
+              <Link to='/organisationPro'>
                 <button type="button" className="btn btn-primary">Get Started
                 </button>
               </Link>
@@ -52,7 +52,7 @@ const Home = () => {
               <p className="card-text">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem delectus, eligendi, expedita possimus nihil corrupti facilis quos sequi in a unde ebhsgcbvbc corporis optio numquffsafam plac fasfasfa eat cum rem dsfsafdf etretwtrt vitae debitis exercitationem similique. Consectetur nam, iure ea, quaerat sequi animi repellat totam quod quos sed asperiores molestias quibusdam, velit ullam fdsfd3rtgf aut fugit?
               </p>
-              <Link to='/offlineComp'>
+              <Link to='/organisationPro'>
 
                 <button type="button" className="btn btn-primary">
                   Get Started

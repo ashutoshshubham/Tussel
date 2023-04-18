@@ -15,6 +15,7 @@ import UserAuth from './auth/UserAuth'
 import { useState } from 'react';
 import View_details from './components/main/View_details';
 import CompetitionEntry from './components/main/CompetitionEntry';
+import DisplayDetails from './components/main/DisplayDetails';
 
 
 
@@ -45,6 +46,7 @@ function App() {
     
           <Route element={<UserAuth><View_details /></UserAuth>} path='view_details' />
           <Route element={<CompetitionEntry />} path='competitionEntry' />
+          <Route element={<DisplayDetails />} path='displayDetails' />
 
         </Routes>
       </UserProvider>

@@ -84,20 +84,20 @@ const Navbar = () => {
                                     <Link class="nav-link" to='organisationPro'
                                     >Organisation Profile</Link>
                                 </li>
-                                <li class="nav-item">
+                                {/* <li class="nav-item">
                                     <Link class="nav-link" to='Competition_det_entry'
                                     >Competition</Link>
-                                </li>
+                                </li> */}
                                 <li class="nav-item">
                                     <Link class="nav-link" to='feedback'
                                     >Feedback</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to={'/view_details'}
-                                    >View Details</Link>
+                                    <Link class="nav-link" to='/displayDetails'
+                                    >Display Details</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to={'/competitionEntry'}
+                                    <Link class="nav-link" to='/competitionEntry'
                                     >Competition</Link>
                                 </li>
                             </ul>

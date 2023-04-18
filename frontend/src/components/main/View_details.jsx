@@ -9,8 +9,8 @@ const View_details = () => {
     // const { id } = useParams();
     const [orgData, setOrgData] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [on_competition, setOn_Competition] = useState([])
-    const [off_competition, setOff_Competition] = useState([])
+    // const [on_competition, setOn_Competition] = useState([])
+    // const [off_competition, setOff_Competition] = useState([])
 
 
     const fetchOrgData = async () => {
@@ -28,43 +28,44 @@ const View_details = () => {
 
     }
 
-    const fetchOffline = async () => {
-        setLoading(true);
-        const res = await fetch('http://localhost:5000/offline/getbyuser/' + currentUser._id)
+    // const fetchOffline = async () => {
+    //     setLoading(true);
+    //     const res = await fetch('http://localhost:5000/offline/getbyuser/' + currentUser._id)
 
-        setLoading(false);
-        console.log(res.status)
+    //     setLoading(false);
+    //     console.log(res.status)
 
-        if (res.status === 200) {
-            const data = await res.json();
-            console.log(data)
-            setOff_Competition(data)
-        }
-    }
+    //     if (res.status === 200) {
+    //         const data = await res.json();
+    //         console.log(data)
+    //         setOff_Competition(data)
+    //     }
+    // }
 
-    const fetchOnline = async () => {
-        setLoading(true);
-        const res = await fetch('http://localhost:5000/online/getbyuser/' + currentUser._id)
+    // const fetchOnline = async () => {
+    //     setLoading(true);
+    //     const res = await fetch('http://localhost:5000/online/getbyuser/' + currentUser._id)
 
-        setLoading(false);
-        console.log(res.status)
+    //     setLoading(false);
+    //     console.log(res.status)
 
-        if (res.status === 200) {
-            const data = await res.json();
-            console.log(data)
-            setOn_Competition(data)
-        }
-    }
+    //     if (res.status === 200) {
+    //         const data = await res.json();
+    //         console.log(data)
+    //         setOn_Competition(data)
+    //     }
+    // }
 
     useEffect(() => {
         fetchOrgData();
-        fetchOffline();
-        fetchOnline();
+        // fetchOffline();
+        // fetchOnline();
     }, [])
 
 
     const displayDetails = () => {
-        if (!loading && orgData && (on_competition || off_competition)) {
+        // if (!loading && orgData && (on_competition || off_competition)) {
+        if (!loading && orgData) {
 
             // return (
             //     <div className="card mt-3">
@@ -90,7 +91,8 @@ const View_details = () => {
             //     </div>
             // )
 
-        } else {
+        } 
+        else {
             return <h1>Loading...</h1>
         }
     }
@@ -104,12 +106,6 @@ const View_details = () => {
         <div className='container'>
 
             {displayDetails()}
-
-
-
-
-
-
 
         </div>
     )
