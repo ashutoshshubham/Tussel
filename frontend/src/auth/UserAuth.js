@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 const UserAuth = ({children}) => {
   
     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
     
     if(currentUser!==null){
         return children;

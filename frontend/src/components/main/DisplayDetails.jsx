@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const DisplayDetails = () => {
@@ -96,6 +97,7 @@ const DisplayDetails = () => {
                                                 <p><b>Rewards : </b>{cItem.rewards}</p>
                                                 <p><b>Venue : </b>{cItem.venue}</p>
                                                 <button type="button" className="btn btn-danger" onClick={() => deleteCompData(cItem._id)}>Delete</button>
+                                                <Link to={'/updateComp_data/' + cItem._id}><button type="button" className="btn btn-success">Update Data</button></Link>
                                                 <hr />
                                             </div>
 

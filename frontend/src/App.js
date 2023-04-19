@@ -16,6 +16,7 @@ import { useState } from 'react';
 import View_details from './components/main/View_details';
 import CompetitionEntry from './components/main/CompetitionEntry';
 import DisplayDetails from './components/main/DisplayDetails';
+import UpdateComp_data from './components/main/UpdateComp_data';
 
 
 
@@ -47,6 +48,7 @@ function App() {
           <Route element={<UserAuth><View_details /></UserAuth>} path='view_details' />
           <Route element={<CompetitionEntry />} path='competitionEntry' />
           <Route element={<DisplayDetails />} path='displayDetails' />
+          <Route element={<UpdateComp_data />} path='updateComp_data/:compId' />
 
         </Routes>
       </UserProvider>

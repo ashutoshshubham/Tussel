@@ -28,8 +28,8 @@ router.get('/getall', (req, res) => {
         });
 })
 
-router.get('/getbyid/:userid', (req, res) => {
-    Model.findById(req.params.userid)
+router.get('/getbyid/:CompId', (req, res) => {
+    Model.findById(req.params.CompId)
         .then((result) => {
             res.json(result);
         }).catch((err) => {
@@ -40,16 +40,26 @@ router.get('/getbyid/:userid', (req, res) => {
 
 router.delete('/delete/:CompId', (req, res) => {
     Model.findByIdAndDelete(req.params.CompId)
-    .then((result) => {
-        res.json(result);
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then((result) => {
+            res.json(result);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 })
 
 router.get('/getbyuser/:userid', (req, res) => {
     Model.find({ user: req.params.userid })
+        .then((result) => {
+            res.json(result);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+})
+
+router.put('/updateComp_data/:CompId', (req, res) => {
+    Model.findByIdAndUpdate(req.params.CompId, req.body)
         .then((result) => {
             res.json(result);
         }).catch((err) => {

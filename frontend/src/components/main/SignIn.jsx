@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik } from "formik"
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from "sweetalert2"
@@ -6,6 +6,8 @@ import './SignUp.css'
 import { useUserContext } from '../../context/UserProvider'
 
 const SignIn = () => {
+
+
     const navigate = useNavigate();
 
     const {setLoggedIn} = useUserContext();
@@ -38,13 +40,14 @@ const SignIn = () => {
 
             // check if there is a previous url , if not redirect to profile page
 
-            console.log(document.location)
-            console.log(document.location.href)
+            // console.log(document.location)
+            // console.log(document.location.href)
 
-            const currentUrl = document.location.href;
-            if (currentUrl !== null){
-                navigate('/display')
-            }
+            sessionStorage.setItem('currentURL', document.location.href)
+
+            // if (currentURL !== null){
+            //     navigate('/display')
+            // }
 
             
 
