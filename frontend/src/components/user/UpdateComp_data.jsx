@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 const UpdateComp_data = () => {
 
-    const { id } = useParams();
+    const { compId } = useParams();
     const [compData, setCompData] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -13,9 +13,10 @@ const UpdateComp_data = () => {
 
     const getCompDataById = async () => {
         setLoading(true);
-        const res = await fetch('http://localhost:5000/competition/getbyid/' + id)
+        const res = await fetch('http://localhost:5000/competition/getbyid/' + compId)
 
         console.log(res.status)
+        // console.log(compId)
 
         if (res.status === 200) {
             const data = await res.json();
@@ -31,7 +32,7 @@ const UpdateComp_data = () => {
 
     const updateCompData = async (formdata) => {
         console.log(formdata)
-        const res = await fetch('http://localhost:5000/competition/updateComp_data/' + id, {
+        const res = await fetch('http://localhost:5000/competition/updateComp_data/' + compId, {
             method: 'PUT',
             body: JSON.stringify(formdata),
             headers: {

@@ -105,10 +105,10 @@ const Navbar = () => {
                                     <Link className="nav-link text-white" to='/competitionEntry'
                                     >Competition</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link text-white" to='/updateComp_data'
+                                {/* <li className="nav-item">
+                                    <Link className="nav-link text-white" to={'/updateComp_data/' + currentUser._id}
                                     >Update Comp Data</Link>
-                                </li>
+                                </li> */}
                             </ul>
 
 
