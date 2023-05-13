@@ -5,18 +5,15 @@ import Navbar from './components/main/Navbar';
 import SignUp from './components/main/SignUp';
 import SignIn from './components/main/SignIn';
 import ForgetPswd from './components/main/ForgetPswd';
-import Organisation_Pro from './components/main/Organisation_Pro';
-import Competition_det_entry from './components/main/Competition_det_entry';
-import Online_Comp from './components/main/Online_Comp';
-import Offline_Comp from './components/main/Offline_Comp';
 import Feedback from './components/main/Feedback';
 import UserProvider from './context/UserProvider';
-import UserAuth from './auth/UserAuth'
 import { useState } from 'react';
-import View_details from './components/main/View_details';
-import CompetitionEntry from './components/main/CompetitionEntry';
 import DisplayDetails from './components/main/DisplayDetails';
-import UpdateComp_data from './components/main/UpdateComp_data';
+import Main from './components/main';
+import View_details from './components/user/View_details';
+import Organisation_Pro from './components/user/Organisation_Pro';
+import CompetitionEntry from './components/user/CompetitionEntry';
+import UpdateComp_data from './components/user/UpdateComp_data';
 
 
 
@@ -34,20 +31,18 @@ function App() {
         <Navbar />
         <Routes>
           <Route element={<Navigate to='/homepage' />} path='/' />
-          <Route element={<SignUp />} path='signup' />
-          <Route element={<Home />} path='homepage' />
-          <Route element={<SignIn />} path='signin' />
-          <Route element={<ForgetPswd />} path='forgetpswd' />
+          <Route element={<Main />}>
+            <Route element={<SignUp />} path='signup' />
+            <Route element={<Home />} path='homepage' />
+            <Route element={<SignIn />} path='signin' />
+            <Route element={<ForgetPswd />} path='forgetpswd' />
+            <Route element={<DisplayDetails />} path='displayDetails' />
+            <Route element={<Feedback />} path='feedback' />
+          </Route>
 
-          <Route element={<UserAuth><Organisation_Pro /></UserAuth>} path='organisationPro' />
-          {/* <Route element={<UserAuth><Competition_det_entry /></UserAuth>} path='Competition_det_entry' /> */}
-          {/* <Route element={<UserAuth><Online_Comp /></UserAuth>} path='onlineComp' />
-          <Route element={<UserAuth><Offline_Comp /></UserAuth>} path='offlineComp' /> */}
-          <Route element={<UserAuth><Feedback /></UserAuth>} path='feedback' />
-    
-          <Route element={<UserAuth><View_details /></UserAuth>} path='view_details' />
+          <Route element={<Organisation_Pro />} path='organisationPro' />
+          <Route element={<View_details />} path='view_details' />
           <Route element={<CompetitionEntry />} path='competitionEntry' />
-          <Route element={<DisplayDetails />} path='displayDetails' />
           <Route element={<UpdateComp_data />} path='updateComp_data/:compId' />
 
         </Routes>
