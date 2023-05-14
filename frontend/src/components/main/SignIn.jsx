@@ -53,7 +53,7 @@ const SignIn = () => {
 
             
 
-            navigate('/organisationPro');
+            navigate('/user/organisationPro');
         }
         else if (res.status === 401) {
             Swal.fire({

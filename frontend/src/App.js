@@ -14,6 +14,7 @@ import View_details from './components/user/View_details';
 import Organisation_Pro from './components/user/Organisation_Pro';
 import CompetitionEntry from './components/user/CompetitionEntry';
 import UpdateComp_data from './components/user/UpdateComp_data';
+import User from './components/user';
 
 
 
@@ -28,7 +29,6 @@ function App() {
   return (
     <BrowserRouter>
       <UserProvider currentUser={currentUser}>
-        <Navbar />
         <Routes>
           <Route element={<Navigate to='/homepage' />} path='/' />
           <Route element={<Main />}>
@@ -36,14 +36,19 @@ function App() {
             <Route element={<Home />} path='homepage' />
             <Route element={<SignIn />} path='signin' />
             <Route element={<ForgetPswd />} path='forgetpswd' />
+            
+          </Route>
+
+          <Route element={<User />} path='user'>
             <Route element={<DisplayDetails />} path='displayDetails' />
+            <Route element={<Organisation_Pro />} path='organisationPro' />
+            <Route element={<View_details />} path='view_details' />
+            <Route element={<CompetitionEntry />} path='competitionEntry' />
+            <Route element={<UpdateComp_data />} path='updateComp_data/:compId' />
             <Route element={<Feedback />} path='feedback' />
           </Route>
 
-          <Route element={<Organisation_Pro />} path='organisationPro' />
-          <Route element={<View_details />} path='view_details' />
-          <Route element={<CompetitionEntry />} path='competitionEntry' />
-          <Route element={<UpdateComp_data />} path='updateComp_data/:compId' />
+
 
         </Routes>
       </UserProvider>

@@ -44,6 +44,23 @@ const Navbar = () => {
                     {/* <button className="btn btn-danger ms-3" aria-current="page" onClick={logout}>
                         Logout
                     </button> */}
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to='/user/organisationPro'
+                        >Organisation Profile</Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to='/user/feedback'
+                        >Feedback</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to='/user/displayDetails'
+                        >Display Details</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white" to='/user/competitionEntry'
+                        >Competition</Link>
+                    </li>
                     <button type="button" className="btn btn-danger me-3 mb-2" onClick={logout}>
                         LogOut
                     </button>
@@ -58,12 +75,12 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor:'indigo'}}>
+            <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'green' }}>
                 <div className="container">
-                    <img src="https://cdn-icons-png.flaticon.com/512/708/708906.png" 
-                    alt="" 
-                    height={45} 
-                    className='mx-1'
+                    <img src="https://cdn-icons-png.flaticon.com/512/708/708906.png"
+                        alt=""
+                        height={45}
+                        className='mx-1'
                     />
                     <Link className="navbar-brand text-white" to="homepage"><b>TUSSEL</b></Link>
                     <button
@@ -77,39 +94,36 @@ const Navbar = () => {
                     >
                         <i className="fas fa-bars"></i>
                     </button>
-                      
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav">
-                                <li className="nav-item">
-                                    <Link className="nav-link text-white" aria-current="page" to="homepage">Home
-                                    </Link>
-                                </li>
 
-                                <li className="nav-item">
-                                    <Link className="nav-link text-white" to='organisationPro'
-                                    >Organisation Profile</Link>
-                                </li>
-                                {/* <li className="nav-item">
-                                    <Link className="nav-link" to='Competition_det_entry'
-                                    >Competition</Link>
-                                </li> */}
-                                <li className="nav-item">
-                                    <Link className="nav-link text-white" to='feedback'
-                                    >Feedback</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link text-white" to='/displayDetails'
-                                    >Display Details</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link text-white" to='/competitionEntry'
-                                    >Competition</Link>
-                                </li>
-                                {/* <li className="nav-item">
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav">
+                            {/* <li className="nav-item">
+                                <Link className="nav-link text-white" aria-current="page" to="/homepage">Home
+                                </Link>
+                            </li> */}
+
+                            {/* <li className="nav-item">
+                                <Link className="nav-link text-white" to='organisationPro'
+                                >Organisation Profile</Link>
+                            </li>
+
+                            <li className="nav-item">
+                                <Link className="nav-link text-white" to='feedback'
+                                >Feedback</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link text-white" to='/displayDetails'
+                                >Display Details</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link text-white" to='/competitionEntry'
+                                >Competition</Link>
+                            </li> */}
+                            {/* <li className="nav-item">
                                     <Link className="nav-link text-white" to={'/updateComp_data/' + currentUser._id}
                                     >Update Comp Data</Link>
                                 </li> */}
-                            </ul>
+                        </ul>
 
 
                         {showLoggedIn()}
