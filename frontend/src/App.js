@@ -39,7 +39,7 @@ function App() {
             
           </Route>
 
-          <Route element={<User />} path='user'>
+          <Route element={<UserAuth><User /></UserAuth>} path='user'>
             <Route element={<DisplayDetails />} path='displayDetails' />
             <Route element={<Organisation_Pro />} path='organisationPro' />
             <Route element={<View_details />} path='view_details' />
